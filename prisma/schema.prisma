@@ -124,3 +124,13 @@ model student {
   nationality String   @db.VarChar(30)
   crseCode    String   @map("crse_code") @db.VarChar(5)
 }
+
+model studModPerformance {
+  admNo        String @map("adm_no")         @db.Char(4)
+  modRegistered String @map("mod_registered") @db.VarChar(10)
+  mark         Int
+  grade        String @db.Char(2)
+
+  @@id([admNo, modRegistered])
+  @@map("stud_mod_performance")
+}
